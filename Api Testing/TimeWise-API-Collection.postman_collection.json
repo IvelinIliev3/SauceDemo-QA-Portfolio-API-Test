@@ -1,0 +1,263 @@
+{
+	"info": {
+		"_postman_id": "a3ed5473-0f8d-4d01-90fb-94017e7d0149",
+		"name": "TimeWise API Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50452848",
+		"_collection_link": "https://www.postman.com/iliev-ivn-4282921/qaregularexammanual/collection/50452848-a3ed5473-0f8d-4d01-90fb-94017e7d0149?action=share&source=collection_link&creator=50452848"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n\"userName\": \"FromPostman1\",\r\n\r\n\"firstName\": \"FromPostman1\",\r\n\r\n\"midName\": \"FromPostman1\",\r\n\r\n\"lastName\": \"FromPostman1\",\r\n\r\n\"email\": \"FromPostman1@gmail.com\",\r\n\r\n\"password\": \"123456\",\r\n\r\n\"rePassword\": \"123456\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://d1dzr3dh7g0qgk.cloudfront.net/api/User/Register",
+					"protocol": "https",
+					"host": [
+						"d1dzr3dh7g0qgk",
+						"cloudfront",
+						"net"
+					],
+					"path": [
+						"api",
+						"User",
+						"Register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Log in User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n\"email\": \"FromPostman1@gmail.com\",\r\n\r\n\"password\": \"123456\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://d1dzr3dh7g0qgk.cloudfront.net/api/User/Authorization",
+					"protocol": "https",
+					"host": [
+						"d1dzr3dh7g0qgk",
+						"cloudfront",
+						"net"
+					],
+					"path": [
+						"api",
+						"User",
+						"Authorization"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List all tasks",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiJjMDVlNDBlMi1iNjMxLTQ5YjItOWFhMi04ZTAxN2FjZTZhYWUiLCJpYXQiOiIxMi8xNC8yMDI1IDExOjI3OjUzIiwiVXNlcklkIjoiN2ViOGU2MDItMGMyMC00ZWJjLWJjOWEtOTI3MDIzM2RiMDYzIiwiRW1haWwiOiJGcm9tUG9zdG1hbjFAZ21haWwuY29tIiwiVXNlck5hbWUiOiJGcm9tUG9zdG1hbjEiLCJleHAiOjE3NjU3MzMyNzMsImlzcyI6IlRpbWVXaXNlX0FwcF9Tb2Z0VW5pIiwiYXVkIjoiVGltZVdpc2VfV2ViQVBJX1NvZnRVbmkifQ.CgnCAV34dYPVSS2V-tNHBDDwrdI8srKSIgjNwZPYNiU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://d1dzr3dh7g0qgk.cloudfront.net/api/Task/AllTasks",
+					"protocol": "https",
+					"host": [
+						"d1dzr3dh7g0qgk",
+						"cloudfront",
+						"net"
+					],
+					"path": [
+						"api",
+						"Task",
+						"AllTasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Count of all tasks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{vault:authorization-secret}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://d1dzr3dh7g0qgk.cloudfront.net/api/Task/Count",
+					"protocol": "https",
+					"host": [
+						"d1dzr3dh7g0qgk",
+						"cloudfront",
+						"net"
+					],
+					"path": [
+						"api",
+						"Task",
+						"Count"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiJjMDVlNDBlMi1iNjMxLTQ5YjItOWFhMi04ZTAxN2FjZTZhYWUiLCJpYXQiOiIxMi8xNC8yMDI1IDExOjI3OjUzIiwiVXNlcklkIjoiN2ViOGU2MDItMGMyMC00ZWJjLWJjOWEtOTI3MDIzM2RiMDYzIiwiRW1haWwiOiJGcm9tUG9zdG1hbjFAZ21haWwuY29tIiwiVXNlck5hbWUiOiJGcm9tUG9zdG1hbjEiLCJleHAiOjE3NjU3MzMyNzMsImlzcyI6IlRpbWVXaXNlX0FwcF9Tb2Z0VW5pIiwiYXVkIjoiVGltZVdpc2VfV2ViQVBJX1NvZnRVbmkifQ.CgnCAV34dYPVSS2V-tNHBDDwrdI8srKSIgjNwZPYNiU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"taskName\": \"task123\",\r\n  \"startDate\": \"25/01/2023 16:28\",\r\n  \"endDate\": \"26/01/2023 18:28\",\r\n  \"description\": \"Task description has 30 characters made by IvelinIliev3 student in Softuni\",\r\n  \"status\": \"ToDo\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://d1dzr3dh7g0qgk.cloudfront.net/api/Task/Create",
+					"protocol": "https",
+					"host": [
+						"d1dzr3dh7g0qgk",
+						"cloudfront",
+						"net"
+					],
+					"path": [
+						"api",
+						"Task",
+						"Create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiJjMDVlNDBlMi1iNjMxLTQ5YjItOWFhMi04ZTAxN2FjZTZhYWUiLCJpYXQiOiIxMi8xNC8yMDI1IDExOjI3OjUzIiwiVXNlcklkIjoiN2ViOGU2MDItMGMyMC00ZWJjLWJjOWEtOTI3MDIzM2RiMDYzIiwiRW1haWwiOiJGcm9tUG9zdG1hbjFAZ21haWwuY29tIiwiVXNlck5hbWUiOiJGcm9tUG9zdG1hbjEiLCJleHAiOjE3NjU3MzMyNzMsImlzcyI6IlRpbWVXaXNlX0FwcF9Tb2Z0VW5pIiwiYXVkIjoiVGltZVdpc2VfV2ViQVBJX1NvZnRVbmkifQ.CgnCAV34dYPVSS2V-tNHBDDwrdI8srKSIgjNwZPYNiU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n\"taskName\": \"changed task\",\r\n\r\n\"startDate\": \"26/01/2023 17:28\",\r\n\r\n\"endDate\": \"27/01/2023 19:28\",\r\n\r\n\"description\": \"This description has been changed.\",\r\n\r\n\"status\": \"InProgress\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "d1dzr3dh7g0qgk.cloudfront.net/api/Task/Edit/ea647837-9674-4d75-b166-08de3adef70f",
+					"host": [
+						"d1dzr3dh7g0qgk",
+						"cloudfront",
+						"net"
+					],
+					"path": [
+						"api",
+						"Task",
+						"Edit",
+						"ea647837-9674-4d75-b166-08de3adef70f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJKd3RTZXJ2aWNlQWNjZXNzVG9rZW4iLCJqdGkiOiJjMDVlNDBlMi1iNjMxLTQ5YjItOWFhMi04ZTAxN2FjZTZhYWUiLCJpYXQiOiIxMi8xNC8yMDI1IDExOjI3OjUzIiwiVXNlcklkIjoiN2ViOGU2MDItMGMyMC00ZWJjLWJjOWEtOTI3MDIzM2RiMDYzIiwiRW1haWwiOiJGcm9tUG9zdG1hbjFAZ21haWwuY29tIiwiVXNlck5hbWUiOiJGcm9tUG9zdG1hbjEiLCJleHAiOjE3NjU3MzMyNzMsImlzcyI6IlRpbWVXaXNlX0FwcF9Tb2Z0VW5pIiwiYXVkIjoiVGltZVdpc2VfV2ViQVBJX1NvZnRVbmkifQ.CgnCAV34dYPVSS2V-tNHBDDwrdI8srKSIgjNwZPYNiU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "d1dzr3dh7g0qgk.cloudfront.net/api/Task/Delete/ea647837-9674-4d75-b166-08de3adef70f",
+					"host": [
+						"d1dzr3dh7g0qgk",
+						"cloudfront",
+						"net"
+					],
+					"path": [
+						"api",
+						"Task",
+						"Delete",
+						"ea647837-9674-4d75-b166-08de3adef70f"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
