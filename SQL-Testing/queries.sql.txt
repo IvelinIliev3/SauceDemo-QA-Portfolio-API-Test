@@ -1,0 +1,12 @@
+-- QA Scenario 1:  (UC2-5)
+SELECT * FROM Users WHERE Username = 'Georgiev123';
+
+-- QA Scenario 2: (Bug ID 10)
+-- SELECT TaskName, CreatedOn, GETDATE() as ServerTime 
+FROM Tasks 
+WHERE TaskName = 'RegularExam';
+
+-- QA Scenario 3: (UC2-6)
+SELECT FirstName, LEN(FirstName) as NameLength 
+FROM Users 
+WHERE LEN(FirstName) > 40;
